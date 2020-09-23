@@ -15,7 +15,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
-ACCOUNTS_DIR = BASE_DIR / "accounts"
+# ACCOUNTS_DIR = BASE_DIR / "accounts"
+# JOBS_DIR = BASE_DIR / "jobs"
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'jobs',
     'rest_framework',
     'debug_toolbar',
 ]
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'ondemand_service.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
